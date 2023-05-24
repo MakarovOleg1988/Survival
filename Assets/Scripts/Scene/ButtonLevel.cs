@@ -57,5 +57,16 @@ namespace Survival
         {
             SceneManager.LoadScene("Level 1");
         }
+
+        public void ExitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
+            Application.Quit();
+#elif UNITY_ANDROID
+             Application.Quit();
+#endif
+        }
     }
 }

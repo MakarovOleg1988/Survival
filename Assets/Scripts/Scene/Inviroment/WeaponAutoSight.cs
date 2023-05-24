@@ -28,6 +28,8 @@ namespace Survival
                 }
             }
 
+            if (nearestObject == null) return;
+
             if (nearestObject != null)
             {
                 transform.right = nearestObject.transform.position - transform.position;

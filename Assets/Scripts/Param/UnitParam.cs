@@ -15,21 +15,6 @@ namespace Survival
         protected float SpeedRotation() => _speedRotation;
 
         [SerializeField]
-        private int _health;
-        public int CurrentHealth
-        {
-            get { return _health; }
-            set { _health = value; }
-        }
-
-        protected int _maxHealth;
-        public int MaxHealth
-        {
-            get { return _maxHealth; }
-            set { _maxHealth = value; }
-        }
-
-        [SerializeField]
         protected GameObject[] _items;
     }
 }

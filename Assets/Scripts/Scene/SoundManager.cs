@@ -38,7 +38,7 @@ namespace Survival
         private void OnDestroy()
         {
             IEventManager._onSetShootRifle -= SetShootRifleSound;
-            IEventManager._onSetDamagePlayer += SetDamageplayerSound;
+            IEventManager._onSetDamagePlayer -= SetDamageplayerSound;
             IEventManager._onSetReloadWeapon -= SetReloadWeaponSound;
         }
     }

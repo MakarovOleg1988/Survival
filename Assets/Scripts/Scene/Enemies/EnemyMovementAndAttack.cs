@@ -2,7 +2,7 @@
 
 namespace Survival
 {
-    public class EnemyMovementAndAttack : UnitParam
+    public class EnemyMovementAndAttack : EnemyParam
     {
         private EnemyNavigation enemyNavigation;
 

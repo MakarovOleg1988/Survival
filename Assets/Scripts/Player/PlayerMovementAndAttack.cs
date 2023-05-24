@@ -7,12 +7,6 @@ namespace Survival
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovementAndAttack : PlayerParam, IEventManager
     {
-        private Vector2 _targetDirection;
-        public Vector2 _directionToEnemy { get; private set; }
-
-        [SerializeField]
-        private Rigidbody2D _rbWeapon;
-
         private void Awake()
         {
             _controller = new NewControls();
@@ -94,9 +88,23 @@ namespace Survival
                 }
             }
 
-            if (collision.GetComponent<HelmetParam>()) _items[0].SetActive(true);
-            else if (collision.GetComponent<EnemyMovementAndAttack>()) _items[1].SetActive(true);
-            else if (collision.GetComponent<EnemyMovementAndAttack>()) _items[2].SetActive(true);
+            if (collision.GetComponent<HelmetParam>())
+            {
+                _items[0].SetActive(true);
+                _InventoryItems[0].SetActive(true);
+            }
+            else if (collision.GetComponent<ArmorParam>())
+            {
+                _items[1].SetActive(true);
+                _InventoryItems[1].SetActive(true);
+            }
+
+            else if (collision.GetComponent<PantsParam>())
+            {
+                _items[2].SetActive(true);
+                _items[3].SetActive(true);
+                _InventoryItems[2].SetActive(true);
+            }
         }
 
         private void OnDisable()
